@@ -9,13 +9,6 @@ import { Route, Routes, NavLink } from 'react-router-dom'
 
 function App() {
 
-  
-
-
-
-
-
-
 
 
   return (
@@ -26,8 +19,8 @@ function App() {
 
       <Routes>
       
-        <Route path="/" element={< HomePage />} />
-        <Route path="/movie" element={<MoviePages />} />
+        <Route path='/' element={< HomePage />} />
+        <Route path='/movie' element={<MoviePages />} />
 
       </Routes>
     </>

@@ -5,7 +5,7 @@ import {GetPopularMovie} from '.././api'
 
 function HomePage() {
 
-    const [PhotoOfMovies, setPhotoOfMovies] = useState();
+    const [photoOfMovies, setPhotoOfMovies] = useState([]);
 
     useEffect(() => {
         const getData = async () => {
@@ -24,7 +24,7 @@ function HomePage() {
         <>
             <h1>Trending today</h1>
         
-            <MovieList movies={PhotoOfMovies} />
+            <MovieList movies={photoOfMovies} />
         </>
     )
 }
