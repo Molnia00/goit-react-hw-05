@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom"
-import MovieList from '../components/MovieList'
+import MovieList from '../../components/movieList/MovieList'
 import { useEffect, useState } from "react"
-import {GetPopularMovie} from '.././api'
+import {GetPopularMovie} from '../../api'
 
 function HomePage() {
 

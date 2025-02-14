@@ -16,6 +16,11 @@ export const GetPopularMovie = async () => {
 }
 
 
+export const GetDetailsFromMovie = async (movieId) => {
+    const response = await axios.get(`movie/${movieId}`, options);
+    return response.data ;
+}
+
 
 
 
