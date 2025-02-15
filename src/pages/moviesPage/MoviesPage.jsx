@@ -25,22 +25,18 @@ function MoviePages() {
     getData();
   }, [query]); 
 
-  const handleSubmit = (event) => {
+    const handleSubmit = (event) => {
     event.preventDefault(); 
-    const newQuery = event.target.value; 
+    const newQuery = event.target.elements.query.value; 
     setSearchParams({ query: newQuery }); 
   };
-
   return (
     <>
-      <form onSubmit={handleSubmit}> 
+       <form onSubmit={handleSubmit}> 
         <input 
             type="text" 
             placeholder="Find the movie" 
-            value={query} 
-            onChange={(e) => { 
-                setSearchParams({ query: e.target.value }); 
-            }} 
+            name="query"
         />
         <button type="submit">Search</button>
       </form>
