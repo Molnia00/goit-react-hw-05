@@ -22,9 +22,10 @@ export const GetDetailsFromMovie = async (movieId) => {
 }
 
 
-
-
-
+export const GetMovieReviews = async (movieId) => {
+    const response = await axios.get(`movie/${movieId}/reviews`, options);
+    return response.data.results ;
+}
 
 
 

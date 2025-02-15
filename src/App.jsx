@@ -6,6 +6,8 @@ import Navigation from './components/navigation/Navigation'
 import MovieDetail from './pages/movieDetails/MovieDetailsPage'
 import './App.css'
 import { Route, Routes, NavLink } from 'react-router-dom'
+import MovieCast from './components/movieCast/MovieCast'
+import MovieReviews from './components/movieReview/MovieReviews'
 
 function App() {
 
@@ -21,7 +23,11 @@ function App() {
         <Route path='/' element={< HomePage />} />
         <Route path='/movie' element={<MoviePages />} />
 
-        <Route path='/movies/:movieId' element={ <MovieDetail/>} />
+        <Route path='/movies/:movieId' element={<MovieDetail />} >
+          <Route path='reviews' element={<MovieReviews/> } />
+          <Route path='cast' element={ <MovieCast/>}/>
+        </Route>
+
       </Routes>
     </>
   )
