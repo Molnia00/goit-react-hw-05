@@ -35,7 +35,10 @@ export const GetMovieCast = async (movieId) => {
 
 
 
-
+export const getMovieSearch = async (query) => {
+    const response = await axios.get(`search/movie?query=${query}`, options);
+    return response.data.results;
+};
 
 
 
