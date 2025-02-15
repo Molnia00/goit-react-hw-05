@@ -38,7 +38,7 @@ function MoviePages() {
             placeholder="Find the movie" 
             value={query} 
             onChange={(e) => { 
-                setSearchingQuery({ query: e.target.value }); 
+                setSearchParams({ query: e.target.value }); 
             }} 
         />
         <button type="submit">Search</button>
