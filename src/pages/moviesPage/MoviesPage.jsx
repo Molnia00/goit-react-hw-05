@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useLocation, useSearchParams } from "react-router-dom";
 import { getMovieSearch } from "../../api";
 
 function MoviePages() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [info, setInfo] = useState([]); 
-  const query = searchParams.get('query') || ''; 
+    const query = searchParams.get('query') || ''; 
+    const location = useLocation();
 
   useEffect(() => {
     const getData = async () => {
@@ -46,7 +47,9 @@ function MoviePages() {
       {info.length > 0 ? (
           <ul>
               {info.map((movie) => (
-                  <li key={movie.id}>{movie.title}</li> 
+                  <li key={movie.id}><Link to={`/movies/${movie.id}`} state={location}>
+            {movie.title}
+          </Link></li> 
               ))}
           </ul>
       ) : (
