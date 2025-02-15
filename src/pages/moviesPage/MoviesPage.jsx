@@ -16,8 +16,8 @@ function MoviePages() {
                 } else {
                     setInfo([]); 
                 }
-            } catch (error) {
-                console.log('Error fetching movie search results:', error);
+            } catch {
+                console.log('Error fetching movie search results:');
                 setInfo([]); 
             }
         };
