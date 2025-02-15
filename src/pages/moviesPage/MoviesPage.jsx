@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation, useSearchParams } from "react-router-dom";
+import { Link, useLocation, useSearchParams } from "react-router-dom";
 import { getMovieSearch } from "../../api";
 
 function MoviePages() {
@@ -13,7 +13,7 @@ function MoviePages() {
       try {
         if (query) { 
           const data = await getMovieSearch(query);
-          setInfo(data.results || []); 
+          setInfo(data || []);
         } else {
           setInfo([]); 
         }

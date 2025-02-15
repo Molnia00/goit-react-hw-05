@@ -27,12 +27,16 @@ function MovieReviews() {
     return (
         <>
         <ul>
-                {reviews.map(({ author, content, id }) => (
+            {reviews.length === 0 ? (
+                <p>No reviews available.</p>
+            ) : (
+                reviews.map(({ author, content, id }) => (
                     <li key={id}>
                         <h2>{author}</h2>
                         <p>{content}</p>
                     </li>
-                ))}
+                ))
+            )}
         </ul>
         
         </>
