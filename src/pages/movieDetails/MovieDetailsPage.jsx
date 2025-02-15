@@ -29,6 +29,7 @@ function MovieDetail() {
     }
     const { genres, original_title, overview, poster_path,  vote_average  } = movie;
 
+    
 
 
     return (

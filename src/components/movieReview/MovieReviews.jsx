@@ -11,7 +11,7 @@ function MovieReviews() {
         const getData = async () => {
             try {
                 const data = await GetMovieReviews(movieId);
-                setReviews(data);
+                setReviews(data.results);
             }
             catch  {
                 console.log('whats going on here?');
@@ -21,17 +21,16 @@ function MovieReviews() {
     }, [movieId])
     
     if (!reviews) {
-        return <div>We dont have any reviews for this movie</div>; 
+        return <p>We dont have any reviews for this movie</p>; 
     }
 
-    const { id, author, content } = reviews;
     return (
         <>
         <ul>
-                {reviews.map(() => (
+                {reviews.map(({ author, content, id }) => (
                     <li key={id}>
-                        <h3>{author}</h3>
-                        <p>{ content}</p>
+                        <h2>{author}</h2>
+                        <p>{content}</p>
                     </li>
                 ))}
         </ul>

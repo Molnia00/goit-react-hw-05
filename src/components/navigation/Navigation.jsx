@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import css from './lazy.module.css'
+import s from './lazy.module.css'
 
 
 
@@ -8,11 +8,17 @@ function Navigation() {
         <>
             <header>
                 <nav>
-                    <div className='navContain'>
-                        <NavLink className='linkNav' to='/'>Home</NavLink>               
+                    <ul className={s.navContain}>
+                        <li>
+                            <NavLink className={s.linkNav} to='/'>Home</NavLink>
+                        </li>
+                        
+                        <li>
+                            <NavLink className={s.linkNav} to='/movie'>Movie</NavLink>
+                        </li>
+
                     
-                        <NavLink className='linkNav' to='/movie'>Movie</NavLink>
-                    </div>
+                    </ul>
                 </nav>
             </header>
 

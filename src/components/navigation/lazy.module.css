@@ -1,0 +1,11 @@
+.navContain {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    
+}
+
+.linkNav {
+    margin-right: 20px;
+}
