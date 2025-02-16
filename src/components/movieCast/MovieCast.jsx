@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { GetMovieCast } from "../../api";
+import MovieList from "../movieList/MovieList";
 
 function MovieCast() {
     
@@ -27,17 +28,7 @@ function MovieCast() {
     }
 
     return (
-        <ul>
-            {cast.map(({ id, name, profile_path, character }) => (
-                <li key={id}>
-                    <h2>{name}</h2>
-                    <img src={`https://image.tmdb.org/t/p/w200/${profile_path}`}>
-                    </img>
-                    
-                    <h3>{character }</h3>
-                </li>
-            ))}
-        </ul>
+        <MovieList/>
     )
 }
 
