@@ -40,10 +40,8 @@ function MoviePages() {
             name="query"
         />
         <button type="submit">Search</button>
-      </form>
-      {info.length > 0 ? (<MovieList movies={query}/>) : (
-          <p>No results found.</p> 
-      )}
+          </form>
+          <MovieList movies={info}/>
     </>
   );
 }
