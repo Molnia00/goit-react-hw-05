@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation, useSearchParams } from "react-router-dom";
 import { getMovieSearch } from "../../api";
+import MovieList from "../../components/movieList/MovieList";
 
 function MoviePages() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -40,17 +41,7 @@ function MoviePages() {
         />
         <button type="submit">Search</button>
       </form>
-      {info.length > 0 ? (
-          <ul>
-              {info.map((movie) => (
-                  <li key={movie.id}><Link to={`/movies/${movie.id}`} state={location}>
-            {movie.title}
-          </Link></li> 
-              ))}
-          </ul>
-      ) : (
-          <p>No results found.</p> 
-      )}
+      <MovieList/>
     </>
   );
 }
