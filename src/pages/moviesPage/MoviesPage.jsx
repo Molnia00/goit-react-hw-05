@@ -14,7 +14,8 @@ function MoviePages() {
       try {
         if (query) { 
           const data = await getMovieSearch(query);
-          setInfo(data.results || []); 
+            setInfo(data || []); 
+            console.log(data)
         } else {
           setInfo([]); 
         }
@@ -41,7 +42,7 @@ function MoviePages() {
         />
         <button type="submit">Search</button>
           </form>
-          <MovieList movies={info}/>
+          {info.length <= 0 ? <h3>No pages found</h3> : <MovieList movies={info} />}
     </>
   );
 }
